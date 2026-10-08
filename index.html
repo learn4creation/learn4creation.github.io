@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dr. Paawan Sharma</title>
+<meta name="description" content="Dr. Paawan Sharma — Associate Professor, Department of ICT, Pandit Deendayal Energy University. Computer vision, image analysis, machine learning and IoT.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f7f5f0; --surface:#ffffff; --ink:#1d2329; --muted:#5b6670; --line:#e3ded3;
+  --accent:#0f5e63; --accent-soft:#e2efee; --gold:#a8742a; --on-accent:#ffffff;
+  --serif:"Source Serif 4", Georgia, serif; --sans:"IBM Plex Sans", system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root{ --bg:#14181b; --surface:#1b2024; --ink:#e7e9ea; --muted:#9aa5ad; --line:#2c343a;
+         --accent:#6cc3c4; --accent-soft:#1d3335; --gold:#d6a85c; --on-accent:#0d1f20; }
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth; scroll-padding-top:72px}
+body{margin:0; background:var(--bg); color:var(--ink); font:16px/1.65 var(--sans); -webkit-font-smoothing:antialiased}
+a{color:var(--accent); text-decoration-thickness:1px; text-underline-offset:3px}
+.wrap{max-width:980px; margin:0 auto; padding:0 20px}
+
+/* nav */
+nav{position:sticky; top:0; z-index:10; background:color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter:blur(8px); border-bottom:1px solid var(--line)}
+nav .wrap{display:flex; align-items:center; gap:24px; height:56px; overflow-x:auto; scrollbar-width:none}
+nav .brand{font-family:var(--serif); font-weight:700; color:var(--ink); text-decoration:none; white-space:nowrap; margin-right:auto}
+nav a.l{color:var(--muted); text-decoration:none; font-size:14px; white-space:nowrap}
+nav a.l:hover{color:var(--accent)}
+
+/* hero */
+header.hero{padding:72px 0 56px; border-bottom:1px solid var(--line)}
+.hero .top{display:grid; grid-template-columns:150px 1fr; gap:40px; align-items:center}
+.portrait{width:150px; height:150px; border-radius:50%; background:var(--accent); color:var(--on-accent); display:grid; place-items:center;
+  font-family:var(--serif); font-size:52px; font-weight:600; object-fit:cover; letter-spacing:1px}
+.hero h1{font-family:var(--serif); font-size:clamp(34px,5vw,48px); line-height:1.1; margin:0 0 10px; font-weight:700}
+.hero .role{font-size:18px; color:var(--muted); margin:0 0 18px}
+.hero .role b{color:var(--ink); font-weight:600}
+.tags{display:flex; flex-wrap:wrap; gap:8px; margin:0 0 22px; padding:0; list-style:none}
+.tags li{background:var(--accent-soft); color:var(--accent); font-size:13px; font-weight:500; padding:4px 12px; border-radius:999px}
+.btns{display:flex; flex-wrap:wrap; gap:10px}
+.btn{display:inline-flex; align-items:center; gap:8px; padding:9px 16px; border-radius:8px; border:1px solid var(--line); background:var(--surface);
+  color:var(--ink); text-decoration:none; font-size:14px; font-weight:500}
+.btn:hover{border-color:var(--accent); color:var(--accent)}
+.btn.primary{background:var(--accent); border-color:var(--accent); color:var(--on-accent)}
+.btn.primary:hover{color:var(--on-accent); opacity:.9}
+.btn svg{width:16px; height:16px}
+
+/* stats */
+.stats{display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--line); border:1px solid var(--line); border-radius:12px; overflow:hidden; margin:40px 0 0}
+.stat{background:var(--surface); padding:18px 20px}
+.stat .n{font-family:var(--serif); font-size:30px; font-weight:700; line-height:1}
+.stat .t{color:var(--muted); font-size:13px; margin-top:6px}
+
+/* sections */
+section{padding:56px 0; border-bottom:1px solid var(--line)}
+section:last-of-type{border-bottom:0}
+h2{font-family:var(--serif); font-size:28px; margin:0 0 24px; font-weight:700}
+h2 .k{display:block; font-family:var(--sans); font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:var(--gold); font-weight:600; margin-bottom:4px}
+h3{font-family:var(--serif); font-size:20px; margin:32px 0 12px; font-weight:600}
+p{margin:0 0 14px}
+.lead{font-size:18px; max-width:72ch}
+
+.grid2{display:grid; grid-template-columns:1fr 1fr; gap:20px}
+.card{background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:20px 22px}
+.card h4{margin:0 0 6px; font-size:16px; font-weight:600}
+.card p, .card li{color:var(--muted); font-size:15px}
+.card ul{margin:0; padding-left:18px}
+
+/* timeline */
+.tl{list-style:none; margin:0; padding:0; border-left:2px solid var(--line)}
+.tl li{position:relative; padding:0 0 22px 24px}
+.tl li::before{content:""; position:absolute; left:-7px; top:7px; width:12px; height:12px; border-radius:50%; background:var(--bg); border:2px solid var(--accent)}
+.tl .when{font-size:13px; color:var(--muted); font-variant-numeric:tabular-nums}
+.tl .what{font-weight:600}
+.tl .where{color:var(--muted)}
+
+/* publications */
+.pubbar{display:flex; flex-wrap:wrap; gap:10px; align-items:center; margin:0 0 8px}
+.pubbar input{flex:1 1 260px; padding:10px 14px; border-radius:8px; border:1px solid var(--line); background:var(--surface); color:var(--ink); font:inherit; font-size:15px}
+.pubbar input:focus{outline:2px solid var(--accent); outline-offset:1px}
+.count{color:var(--muted); font-size:13px}
+ol.pubs{list-style:none; margin:0; padding:0}
+ol.pubs li{display:grid; grid-template-columns:52px 1fr; gap:12px; padding:12px 0; border-bottom:1px solid var(--line); font-size:15px}
+ol.pubs li:last-child{border-bottom:0}
+ol.pubs .yr{font-variant-numeric:tabular-nums; color:var(--gold); font-weight:600; font-size:14px; padding-top:1px}
+ol.pubs strong{color:var(--ink); font-weight:600}
+ol.pubs .cite{color:var(--muted)}
+details{margin-top:8px}
+details summary{cursor:pointer; color:var(--accent); font-weight:500; font-size:15px; padding:8px 0}
+.hidden{display:none !important}
+
+table{width:100%; border-collapse:collapse; font-size:15px}
+td,th{text-align:left; padding:10px 8px; border-bottom:1px solid var(--line); vertical-align:top}
+th{font-size:12px; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); font-weight:600}
+.badge{display:inline-block; font-size:12px; font-weight:600; padding:2px 8px; border-radius:6px; background:var(--accent-soft); color:var(--accent)}
+.badge.pub{background:color-mix(in srgb, var(--gold) 16%, transparent); color:var(--gold)}
+
+footer{padding:40px 0 60px; color:var(--muted); font-size:14px; text-align:center}
+
+@media (max-width:720px){
+  header.hero{padding:44px 0 36px}
+  .hero .top{grid-template-columns:1fr; gap:22px}
+  .portrait{width:104px; height:104px; font-size:36px}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .grid2{grid-template-columns:1fr}
+  section{padding:40px 0}
+  ol.pubs li{grid-template-columns:1fr; gap:2px}
+  .hide-sm{display:none}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="#top">Paawan Sharma</a>
+    <a class="l" href="#about">About</a>
+    <a class="l" href="#experience">Experience</a>
+    <a class="l" href="#publications">Publications</a>
+    <a class="l" href="#patents">Patents &amp; Projects</a>
+    <a class="l" href="#students">Students</a>
+    <a class="l" href="#teaching">Teaching</a>
+    <a class="l" href="#contact">Contact</a>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap top">
+    <!-- To use a photo: upload photo.jpg to the repository and replace the next line with
+         <img class="portrait" src="photo.jpg" alt="Dr. Paawan Sharma"> -->
+    <div class="portrait" aria-hidden="true">PS</div>
+    <div>
+      <h1>Dr. Paawan Sharma</h1>
+      <p class="role"><b>Associate Professor, Department of ICT</b><br>Pandit Deendayal Energy University, Gandhinagar, India</p>
+      <ul class="tags">
+        <li>Computer Vision</li><li>Image Analysis</li><li>Machine Learning</li><li>Internet of Things</li><li>Wireless Sensor Networks</li>
+      </ul>
+      <div class="btns">
+        <a class="btn primary" href="https://scholar.google.com/citations?user=g_vWpL8AAAAJ&amp;hl=en" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3 1 9l11 6 9-4.91V17h2V9L12 3zm-6.18 9.5v3.83L12 19.7l6.18-3.37V12.5L12 15.9l-6.18-3.4z"/></svg>
+          Google Scholar</a>
+        <a class="btn" href="https://github.com/learn4creation" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.05-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.42-2.7 5.39-5.26 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5z"/></svg>
+          GitHub</a>
+        <a class="btn" href="#contact">Contact</a>
+      </div>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="stats">
+      <div class="stat"><div class="n">13+</div><div class="t">Years in university teaching</div></div>
+      <div class="stat"><div class="n">43</div><div class="t">Journal articles</div></div>
+      <div class="stat"><div class="n">7</div><div class="t">Patents &amp; designs</div></div>
+      <div class="stat"><div class="n">4</div><div class="t">Ph.D. scholars awarded</div></div>
+    </div>
+  </div>
+</header>
+
+<main>
+<section id="about">
+  <div class="wrap">
+    <h2><span class="k">About</span>Research &amp; teaching</h2>
+    <p class="lead">I am an Associate Professor in the Department of Information &amp; Communication Technology at Pandit Deendayal Energy University (PDEU), Gandhinagar, where I have served as Head of the Department (2024–2026) and Dean–IT (2022–2025). I hold a Ph.D. in Engineering from Homi Bhabha National Institute (Indira Gandhi Centre for Atomic Research, Kalpakkam), and bring more than 13 years of university teaching experience along with industry experience in VLSI design and verification at Wipro Technologies.</p>
+    <p class="lead">My work focuses on turning algorithms into real-time working code and embedded hardware — spanning computer vision, medical image analysis, machine learning, IoT security and wireless sensor networks.</p>
+
+    <div class="grid2" style="margin-top:28px">
+      <div class="card">
+        <h4>Research interests</h4>
+        <ul>
+          <li>Image analysis &amp; machine / computer vision</li>
+          <li>Machine learning and deep learning for medical imaging</li>
+          <li>Internet of Things &amp; hardware security (PUFs)</li>
+          <li>Wireless sensor networks &amp; smart grid communication</li>
+          <li>Battery state-of-charge estimation</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h4>Education</h4>
+        <ul>
+          <li><b>Ph.D., Engineering</b> (2014) — Homi Bhabha National Institute, Mumbai (IGCAR, Kalpakkam)</li>
+          <li><b>M.Tech., Communication Systems</b> (2008) — SVNIT, Surat</li>
+          <li><b>B.E., Electronics &amp; Communication</b> (2005) — University of Rajasthan (Govt. Engineering College, Bikaner)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <h2><span class="k">Experience</span>Professional journey</h2>
+    <ul class="tl">
+      <li><div class="when">2021 – present</div><div class="what">Associate Professor</div><div class="where">Pandit Deendayal Energy University, Gandhinagar</div></li>
+      <li><div class="when">2024 – 2026</div><div class="what">Head of Department, ICT</div><div class="where">Pandit Deendayal Energy University, Gandhinagar</div></li>
+      <li><div class="when">2022 – 2025</div><div class="what">Dean – IT</div><div class="where">Pandit Deendayal Energy University, Gandhinagar</div></li>
+      <li><div class="when">2018 – 2021</div><div class="what">Assistant Professor</div><div class="where">Pandit Deendayal Petroleum University, Gandhinagar</div></li>
+      <li><div class="when">2013 – 2018</div><div class="what">Assistant Professor (up to Selection Grade)</div><div class="where">University of Petroleum &amp; Energy Studies, Dehradun</div></li>
+      <li><div class="when">2008 – 2009</div><div class="what">Project Engineer, VLSI design &amp; verification</div><div class="where">Wipro Technologies</div></li>
+    </ul>
+  </div>
+</section>
+
+<section id="publications">
+  <div class="wrap">
+    <h2><span class="k">Publications</span>Selected work</h2>
+    <p>For the full, up-to-date list with citation counts, see my <a href="https://scholar.google.com/citations?user=g_vWpL8AAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar profile</a>.</p>
+
+    <div class="pubbar">
+      <input id="q" type="search" placeholder="Search publications — e.g. mammogram, IoT, battery, 2024" aria-label="Search publications">
+      <span class="count" id="count"></span>
+    </div>
+
+    <h3>Journal articles</h3>
+    <ol class="pubs" id="journals">
+<li data-year="2025"><span class="yr">2025</span><span class="cite">Joy Acharya, <strong>Paawan Sharma</strong>, Mohendra Roy. “Optimized RC-PUF Design for IoT Security: Evaluation of the Impact of ADC Bit Selection and Time Delay on Uniqueness, Reliability, and Statistical Randomness.”Journal of Hardware and Systems Security, 9(3), 190-204, Springer (2025).</span></li>
+<li data-year="2025"><span class="yr">2025</span><span class="cite">Chaudhari, Jay N., Hiren Galiyawala, <strong>Paawan Sharma</strong>, Pancham Shukla, and Mehul S. Raval. “Onboard Person Retrieval System with Model Compression: A Case Study on Nvidia Jetson Orin AGX.” IEEE Access (2025).</span></li>
+<li data-year="2024"><span class="yr">2024</span><span class="cite">Mehta, Chaitali, Amit V. Sant, and <strong>Paawan Sharma</strong>. “SVM-assisted ANN model with principal component analysis based dimensionality reduction for enhancing state-of-charge estimation in LiFePO4 batteries.” e-Prime-Advances in Electrical Engineering, Electronics and Energy 8 (2024): 100596.</span></li>
+<li data-year="2024"><span class="yr">2024</span><span class="cite">Singh, Shailja, Anirban Das, and <strong>Paawan Sharma</strong>. “Predictive modeling of water quality index (WQI) classes in Indian rivers: Insights from the application of multiple Machine Learning (ML) models on a decennial dataset.” Stochastic Environmental Research and Risk Assessment (2024): 1-18.</span></li>
+<li data-year="2024"><span class="yr">2024</span><span class="cite">Shukla, Vipin, Amit Sant, <strong>Paawan Sharma</strong>, Munjal Nayak, and Hasmukh Khatri. “An explainable artificial intelligence based approach for the prediction of key performance indicators for 1 megawatt solar plant under local steppe climate conditions.” Engineering Applications of Artificial Intelligence 131 (2024): 107809.</span></li>
+<li data-year="2024"><span class="yr">2024</span><span class="cite">Mehta, Chaitali, Amit V. Sant, and <strong>Paawan Sharma</strong>. “Optimized ANN for LiFePO4 Battery Charge Estimation using Principal Components based Feature Generation.” Green Energy and Intelligent Transportation (2024): 100175.</span></li>
+<li data-year="2023"><span class="yr">2023</span><span class="cite">Oza, Parita, Urvi Oza, Rajiv Oza, <strong>Paawan Sharma</strong>, Samir Patel, Pankaj Kumar, and Bakul Gohel. “Digital mammography dataset for breast cancer diagnosis research (DMID) with breast mass segmentation analysis.” Biomedical Engineering Letters (2023): 1-14.</span></li>
+<li data-year="2023"><span class="yr">2023</span><span class="cite">Chaudhari, Jay N., Hiren Galiyawala, Minoru Kuribayashi, <strong>Paawan Sharma</strong>, and Mehul S. Raval. “Designing Practical End-to-End System for Soft Biometric-Based Person Retrieval From Surveillance Videos.” IEEE Access 11 (2023): 133640-133657.</span></li>
+<li data-year="2023"><span class="yr">2023</span><span class="cite">Oza, Parita, <strong>Paawan Sharma</strong>, and Samir Patel. “Breast lesion classification from mammograms using deep neural network and test-time augmentation.” Neural Computing and Applications (2023): 1-17.</span></li>
+<li data-year="2022"><span class="yr">2022</span><span class="cite">Shukla, A., B. Bhagat, <strong>P. Sharma</strong>, and K. Mukherjee. “Structural features and solar absorption characteristics of sucrose derived spherical carbons: A case study towards solar-thermal water evaporation.” Cleaner Engineering and Technology 11 (2022): 100585.</span></li>
+<li data-year="2022"><span class="yr">2022</span><span class="cite">Bhagat, B., V. Jadeja, <strong>P. Sharma</strong>, R. Bandyopadhyay, and K. Mukherjee. “Glycine mediated colorimetric method along with image analyses algorithms for detection of Cu (II) in water.” Materials Science and Engineering: B 286 (2022): 116027.</span></li>
+<li data-year="2022"><span class="yr">2022</span><span class="cite">Oza, Parita Rajiv, <strong>Paawan Sharma</strong>, and Samir Patel. “Transfer Learning Assisted Classification of Artefacts Removed and Contrast Improved Digital Mammograms.” Scalable Computing: Practice and Experience 23, no. 3 (2022): 115-127.</span></li>
+<li data-year="2022"><span class="yr">2022</span><span class="cite">Oza, Parita Rajiv, <strong>Paawan Sharma</strong>, and Samir Patel. “A Transfer Representation Learning Approach for Breast Cancer Diagnosis from Mammograms using EfficientNet Models.” Scalable Computing: Practice and Experience 23, no. 2 (2022): 51-58.</span></li>
+<li data-year="2022"><span class="yr">2022</span><span class="cite">Oza, Parita, <strong>Paawan Sharma</strong>, Samir Patel, and Pankaj Kumar. “Computer-Aided Breast Cancer Diagnosis: A Study of Breast Imaging Modalities and Mammogram Repositories.” Current Medical Imaging (2022).</span></li>
+<li data-year="2022"><span class="yr">2022</span><span class="cite">Oza, Parita, <strong>Paawan Sharma</strong>, Samir Patel, Festus Adedoyin, and Alessandro Bruno. “Image Augmentation Techniques for Mammogram Analysis.” Journal of Imaging 8, no. 5 (2022): 141.</span></li>
+<li data-year="2022"><span class="yr">2022</span><span class="cite">Oza, Parita, <strong>Paawan Sharma</strong>, Samir Patel, and Pankaj Kumar. “Deep convolutional neural networks for computer-aided breast cancer diagnostic: a survey.” Neural Computing and Applications (2022): 1-22.</span></li>
+<li data-year="2022"><span class="yr">2022</span><span class="cite">Oza, Parita, <strong>Paawan Sharma</strong>, and Samir Patel. “A Drive Through Computer-Aided Diagnosis of Breast Cancer: A Comprehensive Study of Clinical and Technical Aspects.” Recent Innovations in Computing (2022): 233-249.</span></li>
+<li data-year="2021"><span class="yr">2021</span><span class="cite">Oza, Parita, <strong>Paawan Sharma</strong>, Samir Patel, and Alessandro Bruno. “A bottom-up review of image analysis methods for suspicious region detection in mammograms.” Journal of Imaging 7, no. 9 (2021): 190.</span></li>
+<li data-year="2021"><span class="yr">2021</span><span class="cite">Mehta, Chaitali, Amit V. Sant, and <strong>Paawan Sharma</strong>. “Selection of three RC Branches in Equivalent Circuit Model of Lithium-ion Batteries for Improved Accuracy.” Turkish Journal of Computer and Mathematics Education (TURCOMAT) 12, no. 14 (2021): 1478-1489.</span></li>
+<li data-year=""><span class="yr">&nbsp;</span><span class="cite">Gupta, Mukul Kumar, <strong>Paawan Sharma</strong>, Nitish Sinha, Adesh Kumar, and Varnita Verma. “Frequency Based Estimation of Angular Velocity in Triple Pendulum.” Mathematical Modelling of Engineering Problems, Volume 8 Issue 1, Pages 52-58, iieta.</span></li>
+<li data-year="2020"><span class="yr">2020</span><span class="cite">Bhagat, Bhooma, Vrajrajsinh Jadeja, <strong>Paawan Sharma</strong>, Kuldeep Joshi, and Kalisadhan Mukherjee. “Case study on the use of image analysis for the simple and inexpensive colorimetric detection of Fe (iii) in water.” Analytical Methods 12, no. 37 (2020): 4509-4516. (Web of Science, Impact factor: 2.596)</span></li>
+<li data-year="2018"><span class="yr">2018</span><span class="cite">Lipi Chhaya, <strong>Paawan Sharma</strong>, Adesh Kumar, and Govind Bhagwatikar. 2018. IoT-Based Implementation of Field Area Network Using Smart Grid Communication Infrastructure. Smart Cities 1, no. 1 (2018): 176-189.</span></li>
+<li data-year="2018"><span class="yr">2018</span><span class="cite">Lipi Chhaya, <strong>P. Sharma</strong>, A. Kumar, and G. Bhagwatikar. 2018. Routing Protocol Optimization of Smart Grid Neighborhood Area Network based on IEEE 802.11 Standard. Pertanika Journal of Science &amp; Technology 26, no. 4. (Web of Science, Scopus)</span></li>
+<li data-year="2018"><span class="yr">2018</span><span class="cite">Jasim Farooq, <strong>Paawan Sharma</strong>. 2018. A BIM-based detailed electrical load estimation, costing and code checking. International Journal of Electrical and Computer Engineering. Vol 8(5). (Scopus)</span></li>
+<li data-year="2018"><span class="yr">2018</span><span class="cite">Lipi K. Chhaya, <strong>Paawan Sharma</strong>, Adesh Kumar, and Govind Bhagwatikar. 2018. Cross Layer Optimization and Simulation of Smart Grid Home Area Network. Modelling and Simulation in Engineering. (Web of Science, Scopus)</span></li>
+<li data-year="2018"><span class="yr">2018</span><span class="cite">Vivek Kaundal, <strong>Paawan Sharma</strong>, Manish Prateek, Vinay Chowdary, 2018. Design, development and deployment of a RSSI based wireless network for post disaster management. International Journal of Engineering &amp; Technology, 7 (2.6), 6-11. (Scopus)</span></li>
+<li data-year="2018"><span class="yr">2018</span><span class="cite">Adesh Kumar, <strong>Paawan Sharma</strong>, Mukul Kumar Gupta, Roushan Kumar, 2018. Machine Learning Based Resource Utilization and Pre- estimation for Network on Chip (NoC) Communication. Wireless Personal Communication. 102(3), 2211–2231 (Web of Science, Impact factor: 1.061)</span></li>
+<li data-year="2018"><span class="yr">2018</span><span class="cite">Lipi Chhaya, <strong>Paawan Sharma</strong>, Govind Bhagwatikar, Adesh Kumar, 2018. Development of Wireless Data Acquisition and Control System for Smart Microgrid. Advances in Smart Grid and Renewable Energy, Springer, Lecture Notes in Electrical Engineering, (LNEE), 435, pp. 667-673. (Scopus)</span></li>
+<li data-year="2017"><span class="yr">2017</span><span class="cite">Vivek Kaundal, <strong>Paawan Sharma</strong>, Manish Prateek, 2017. Wireless Sensor Node Localization based on LNSM and Hybrid TLBO- Unilateral technique for Outdoor Location. International Journal of Electronics and Telecommunications, 63(4), pp. 389-397. (Web of Science, Scopus)</span></li>
+<li data-year="2017"><span class="yr">2017</span><span class="cite">Lipi Chhaya, <strong>Paawan Sharma</strong>, Adesh Kumar, Govind Bhagwatikar, 2017. Communication Theories and Protocols for Smart Grid Hierarchical Network. Journal of Electrical and Electronics Engineering. 10(1), pp. 43-48. (Scopus)</span></li>
+<li data-year="2017"><span class="yr">2017</span><span class="cite"><strong>Paawan Sharma</strong>, Mukul K. Gupta, Vivek Kaundal, Amit K. Mondal, 2017. Pattern similarity score based on one dimensional time-series analysis. Journal of Pattern Recognition Research. 12(1), pp. 1-6.(Web of Science)</span></li>
+<li data-year="2017"><span class="yr">2017</span><span class="cite">B. Khaleelu Rehman, Adesh Kumar, <strong>Paawan Sharma</strong>, 2017. Comparative Study of High Performance QRS Complex Detection on Electrocardiogram Signal. International Journal of Control Theory and Applications, 10(7), pp.111-120. (Scopus)</span></li>
+<li data-year="2017"><span class="yr">2017</span><span class="cite">Lipi Chhaya, <strong>Paawan Sharma</strong>, Govind Bhagwatikar, Adesh Kumar, 2017. Wireless Sensor Network Based Smart Grid Communications: Cyber Attacks, Intrusion Detection System and Topology Control. MDPI Electronics, 6(1), pp.1-22. (Web of Science, Impact factor: 2.412)</span></li>
+<li data-year="2016"><span class="yr">2016</span><span class="cite">B. Khaleelu Rehman, Adesh Kumar, <strong>Paawan Sharma</strong>, 2016. A Novel approach for R-PEAK detection in the Electrocardiogram (ECG) Signal. ARPN Journal of Engineering and Applied Sciences, 11(21), pp.1-4. (Scopus)</span></li>
+<li data-year="2016"><span class="yr">2016</span><span class="cite">Vivek Kaundal, <strong>Paawan Sharma</strong>, Devender Saini, Manish Prateek, 2016. Location Fingerprinting Supported Unilateral Algorithm based on Experimental Study of Localization in Disaster Prone Area. International Journal of Computer Science and Information Security, 14 (10), pp.162-175.</span></li>
+<li data-year="2016"><span class="yr">2016</span><span class="cite">Lipi Chhaya, <strong>Paawan Sharma</strong>, Govind Bhagwatikar, Adesh Kumar, 2016. Design and Implementation of Remote Wireless Monitoring and Control of Smart Power System Using Personal Area Network. Indian Journal of Science and Technology, 9(43), pp.1-5. (Web of Science)</span></li>
+<li data-year="2016"><span class="yr">2016</span><span class="cite">Mukul K. Gupta, <strong>Paawan Sharma</strong>, Amit K. Mondal, Adesh Kumar, 2016. Visual Recurrence Analysis of Chaotic and Regular Motion of a multiple pendulum system. Arabian Journal for Science and Engineering, 42(7), pp.2711-2716. (Web of Science, Impact factor: 1.711)</span></li>
+<li data-year="2016"><span class="yr">2016</span><span class="cite">Amit K. Mondal, Vindhya Devalla, <strong>Paawan Sharma</strong>, Mukul K. Gupta, 2016. Advances in floating Aerogenerators: Present status and future. International Journal of Precision Engineering and Manufacturing, 17(11), pp.1555-1568. (Web of Science, Impact factor: 1.378)</span></li>
+<li data-year="2015"><span class="yr">2015</span><span class="cite">Vivek Kaundal, Amit K. Mondal, <strong>Paawan Sharma</strong>, Kamal Bansal, 2015. Tracing of shading effect on underachieving SPV cell of an SPV grid using wireless sensor network. Engineering Science and Technology, an International Journal, 18(3), pp.475-484. (Web of Science, Scopus)</span></li>
+<li data-year="2014"><span class="yr">2014</span><span class="cite"><strong>Paawan Sharma</strong>, N. Murali, T. Jayakumar, 2014. Effect of thermocouple time constant on sensing of temperature fluctuations in a fast reactor subassembly. Journal of Sensors and Sensor Systems, 3(1), p.55. (Web of Science, Scopus)</span></li>
+<li data-year="2013"><span class="yr">2013</span><span class="cite"><strong>Paawan Sharma</strong>, N. Murali, T. Jayakumar, 2013. Statistical testing of temperature fluctuations for estimating thermal power in central subassembly of fast reactor. Annals of Nuclear Energy, 60, pp.406-411. (Web of Science, Impact factor: 1.378)</span></li>
+<li data-year="2012"><span class="yr">2012</span><span class="cite"><strong>Paawan Sharma</strong>, M. Nagarajan, P. Mohanakrishnan, P. Swaminathan, 2012. Signal Processing Analysis of Temperature Fluctuations for a Fuel Subassembly using SCILAB. International Journal of Modelling and Simulation, 32(3), pp.171-177. (Scopus)</span></li>
+<li data-year="2011"><span class="yr">2011</span><span class="cite"><strong>Paawan Sharma</strong>, N. Murali, P. Mohanakrishnan, P. Swaminathan, P., 2011. An Intuitive Signal Processing Approach for Temperature Fluctuations in Fuel Subassemblies. International Journal of Computer Applications, 33(10), pp.22-27.</span></li>
+    </ol>
+
+    <h3>Edited books</h3>
+    <ol class="pubs">
+      <li data-year="2023"><span class="yr">2023</span><span class="cite"><em>Recent Trends and Best Practices in Industry 4.0.</em> River Publishers. ISBN 9781000964387. Eds. Abhinav Sharma, Arpit Jain, Mohendra Roy, <strong>Paawan Sharma</strong>.</span></li>
+      <li data-year="2020"><span class="yr">2020</span><span class="cite"><em>Machine Learning and Deep Learning in Real-Time Applications.</em> IGI Global. ISBN 9781799830979. Eds. Gaurav Meena, Kamal Kant Hiran, Mehul Mahrishi, <strong>Paawan Sharma</strong>.</span></li>
+    </ol>
+
+    <h3>Book chapters &amp; conference papers</h3>
+    <ol class="pubs" id="chapters">
+<li data-year="2025"><span class="yr">2025</span><span class="cite">Garg, Kamal, and <strong>Paawan Sharma</strong>. “Deep Learning Based Symbol Detection in NLOS Ultraviolet Communication with Imperfect Channel State Information.” In 2025 IEEE Wireless Antenna and Microwave Symposium (WAMS), pp. 1-5. IEEE, 2025.</span></li>
+<li data-year="2025"><span class="yr">2025</span><span class="cite">Sangani, Sakshi, Vaishnavi Savaliya, and <strong>Paawan Sharma</strong>. “Sleep Stage Recognition from EEG Signals via 1D Convolutional Networks.” In 2025 International Conference on Artificial Intelligence and Machine Vision (AIMV), pp. 1-6. IEEE, 2025.</span></li>
+<li data-year="2025"><span class="yr">2025</span><span class="cite">Modi, Kshitish, Vedangi Shah, Vanshika Jain, and <strong>Paawan Sharma</strong>. “Investigating Effects of Image Poisoning on Generative Adversarial Networks’ Performance.” In 2025 International Conference on Artificial Intelligence and Machine Vision (AIMV), pp. 1-6. IEEE, 2025.</span></li>
+<li data-year=""><span class="yr">&nbsp;</span><span class="cite">Shukla, Vipin, <strong>Paawan Sharma</strong>, and Manish Kumar. “Reviewing the Prospects of Machine Learning for High-Performance Electrochemical Sensors.” In Nanomaterials for Electrochemical Sensing, pp. 193-208. CRC Press.</span></li>
+<li data-year="2025"><span class="yr">2025</span><span class="cite">Acharya, Joy, <strong>Paawan Sharma</strong>, and Mohendra Roy. “Evaluation of Energy Efficiency of a custom developed Physically Unclonable Function (PUF) for IoT Security.” In 2025 International Conference on Sustainable Energy Technologies and Computational Intelligence (SETCOM), pp. 1-5. IEEE, 2025.</span></li>
+<li data-year="2024"><span class="yr">2024</span><span class="cite">Mehta, Chaitali, Amit V. Sant, and <strong>Paawan Sharma</strong>. “Extended and Unscented Kalman Filter Based Estimation of State-of-Charge of Li-Ion Batteries Using 3-RC Equivalent Circuit Model.” In 2024 IEEE 3rd Industrial Electronics Society Annual On-Line Conference (ONCON), pp. 1-6. IEEE, 2024.</span></li>
+<li data-year="2022"><span class="yr">2022</span><span class="cite">Swain, Debabrata, <strong>Paawan Sharma</strong>, Vinay Vakharia, and Tapash Kumar Tanty. “Prediction of coronary artery disease using logistic regression.” Artificial Intelligence for Signal Processing and Wireless Communication 11 (2022): 149.</span></li>
+<li data-year="2022"><span class="yr">2022</span><span class="cite"><strong>Sharma, Paawan</strong>, Vinay Vakharia, and Debabrata Swain. “Analysis of acoustic emission for milling operation using artificial neural networks.” Artificial Intelligence for Signal Processing and Wireless Communication 11 (2022): 203.</span></li>
+<li data-year="2022"><span class="yr">2022</span><span class="cite"><strong>Sharma, Paawan</strong>, Jigarkumar Shah, and Reema Patel. “Artificial intelligence framework for MSME sectors with focus on design and manufacturing industries.” Materials Today: Proceedings, Volume 62, Part 13, Pages 6962-6966, 2022.</span></li>
+<li data-year="2022"><span class="yr">2022</span><span class="cite">Mehta, Chaitali, Amit V. Sant, and <strong>Paawan Sharma</strong>. “Analysis of State of Health Estimation for Lithium-Ion Cell Using Unscented and Extended Kalman Filter.” In Mathematical Modeling, Computational Intelligence Techniques and Renewable Energy, pp. 459-471. Springer, Singapore, 2022.</span></li>
+<li data-year="2021"><span class="yr">2021</span><span class="cite">Mehta, Chaitali, <strong>Paawan Sharma</strong>, and Amit V. Sant. “A Comprehensive study of Machine Learning Techniques used for estimating State of Charge for Li-ion Battery.” In 2021 International Conference on Artificial Intelligence and Machine Vision (AIMV), pp. 1-6. IEEE, 2021.</span></li>
+<li data-year="2021"><span class="yr">2021</span><span class="cite">Shah, Harsh, Rishi Shah, Shlok Shah, and <strong>Paawan Sharma</strong>. “Dangerous Object Detection for Visually Impaired People using Computer Vision.” In 2021 International Conference on Artificial Intelligence and Machine Vision (AIMV), pp. 1-6. IEEE, 2021.</span></li>
+<li data-year="2020"><span class="yr">2020</span><span class="cite"><strong>Paawan Sharma</strong>, Hardik Patel and Mohendra Roy. Role of Artificial Intelligence based wireless sensor network for pandemic control : A case study using CupCarbon. 2020. COVID-19 pandemic – AI, IoT, robotics, and modern tools to fight it. Accepted (to be published).</span></li>
+<li data-year="2020"><span class="yr">2020</span><span class="cite">Lipi Chhaya, <strong>Paawan Sharma</strong>, Adesh Kumar, and Govind Bhagwatikar. “EMI Concerns, Measurements and Standards for Smart Grid.” In Advances in Greener Energy Technologies, pp. 123-136. Springer, Singapore, 2020. (Scopus)</span></li>
+<li data-year="2020"><span class="yr">2020</span><span class="cite">Lipi Chhaya, <strong>Paawan Sharma</strong>, Adesh Kumar, and Govind Bhagwatikar. “Cybersecurity for Smart Grid: Threats, Solutions and Standardization.” In Advances in Greener Energy Technologies, pp. 17-29. Springer, Singapore, 2020. (Scopus)</span></li>
+<li data-year="2020"><span class="yr">2020</span><span class="cite">Lipi Chhaya, <strong>Paawan Sharma</strong>, Adesh Kumar, and Govind Bhagwatikar. “Application of Data Mining in Smart Grid Technology.” In Encyclopedia of Information Science and Technology, Fifth Edition (2020), pp. 815-827. IGI Global.</span></li>
+<li data-year="2019"><span class="yr">2019</span><span class="cite"><strong>Sharma, Paawan</strong>, Kartik Patel, Sourabh Kuvera, and Fenil Dankhara. “Generative Adversarial Network (GANs) based training set enhancement for Stomach Adenocarcinoma Computed Tomography (CT) scan.” Procedia Computer Science 160 (2019): 377-384. (Scopus, Elsevier).</span></li>
+<li data-year="2018"><span class="yr">2018</span><span class="cite">Vinay Chowdary, Vivek Kaundal, <strong>Paawan Sharma</strong>, and Amit Kumar Mondal. 2018. Implantable Electronics: Integration of Bio-Interfaces, Devices and Sensors. In Medical Big Data and Internet of Medical Things, pp. 55-79. CRC Press.</span></li>
+<li data-year="2020"><span class="yr">2020</span><span class="cite">Patel, Kartik, and <strong>Paawan Sharma</strong>. “FM Broadcast Audio Signal Analysis Using Time–Frequency Distribution Function.” In Data Engineering and Communication Technology, pp. 387-395. Springer, Singapore, 2020. (Scopus, Elsevier).</span></li>
+<li data-year="2019"><span class="yr">2019</span><span class="cite">Farooq J., Pachauri R.K., Sreerama Kumar R., <strong>Sharma P.</strong> (2020) An Add-in Tool for BIM-Based Electrical Load Forecast for Multi-building Microgrid Design. In: Kumar L., Jayashree L., Manimegalai R. (eds) Proceedings of International Conference on Artificial Intelligence, Smart Grid and Smart City Applications. AISGSC 2019 2019. Springer.</span></li>
+<li data-year=""><span class="yr">&nbsp;</span><span class="cite">Design of a Low-Cost Potato Quality Monitoring System. Advances in Intelligent Systems and Computing. In Proceeding of International Conference on Intelligent Communication, Control and Devices (Vol. 624, pp. 1171-1176). Springer Singapore.</span></li>
+<li data-year="2018"><span class="yr">2018</span><span class="cite">Lipi Chhaya, <strong>Paawan Sharma</strong>, Adesh Kumar, Govind Bhagwatikar, 2018. Integration of Cognitive Radio with Heterogeneous Smart Grid Communication Architecture. Advances in Intelligent Systems and Computing. In Proceeding of International Conference on Intelligent Communication, Control and Devices (Vol. 479, pp. 981-989). Springer Singapore.</span></li>
+<li data-year="2017"><span class="yr">2017</span><span class="cite">Vikas Thapa, Shiv Capoor, <strong>Paawan Sharma</strong>, and Amit Kumar Mondal. 2017. Obstacle avoidance for mobile robot using RGB-D camera. In 2017 International Conference on Intelligent Sustainable Systems (ICISS), pp. 1082-1087. IEEE.</span></li>
+<li data-year="2016"><span class="yr">2016</span><span class="cite"><strong>Paawan Sharma</strong>, Mukul K. Gupta, Amit K. Mondal, and Vivek Kaundal, 2016. HAAR like Feature-Based Car Key Detection Using Cascade Classifier. Advances in Intelligent Systems and Computing. In Proceeding of International Conference on Intelligent Communication, Control and Devices (Vol. 479, pp. 689-694). Springer Singapore.</span></li>
+<li data-year="2016"><span class="yr">2016</span><span class="cite">Aakash Gupta, Vernita Verma, Adesh Kumar, <strong>Paawan Sharma</strong>, Mukul K. Gupta, and C.S. Meera, 2016. Stabilization of Underactuated Mechanical System Using LQR Technique. Advances in Intelligent Systems and Computing. In Proceeding of International Conference on Intelligent Communication, Control and Devices (Vol. 479, pp. 601-608). Springer Singapore.</span></li>
+<li data-year="2016"><span class="yr">2016</span><span class="cite">Amitabh Yadav, Vivek Kaundal, Abhishek <strong>Sharma, Paawan</strong> Sharma, Deepak Kumar, and Pankaj Badoni, 2016. Wireless Sensor Network Based Patient Health Monitoring and Tracking System. Advances in Intelligent Systems and Computing. In Proceeding of International Conference on Intelligent Communication, Control and Devices (Vol. 479, pp. 903-917). Springer Singapore.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section id="patents">
+  <div class="wrap">
+    <h2><span class="k">Innovation</span>Patents, designs &amp; funded projects</h2>
+    <table>
+      <thead><tr><th>Title</th><th class="hide-sm">Reference</th><th>Status</th></tr></thead>
+      <tbody>
+        <tr><td>A system for monitoring vehicle driving</td><td class="hide-sm">Patent No. 515983</td><td><span class="badge">Granted</span></td></tr>
+        <tr><td>Method and system to detect crack in rail track</td><td class="hide-sm">Patent No. 488174</td><td><span class="badge">Granted</span></td></tr>
+        <tr><td>Low-cost controlled temperature chamber for electronic hardware testing</td><td class="hide-sm">Appl. 202521037240 A</td><td><span class="badge pub">Published</span></td></tr>
+        <tr><td>CROPWATCH IoT</td><td class="hide-sm">Appl. 202421051273 A</td><td><span class="badge pub">Published</span></td></tr>
+        <tr><td>Landslide detection system</td><td class="hide-sm">Appl. 201811009881 A</td><td><span class="badge pub">Filed</span></td></tr>
+        <tr><td>Smart chair for shopping</td><td class="hide-sm">Design No. 366033-001</td><td><span class="badge">Design</span></td></tr>
+        <tr><td>Device for monitoring the color &amp; texture of samples</td><td class="hide-sm">Design No. 347168-001</td><td><span class="badge">Design</span></td></tr>
+      </tbody>
+    </table>
+
+    <div class="grid2" style="margin-top:28px">
+      <div class="card">
+        <h4>Semantic person retrieval in surveillance</h4>
+        <p>GUJCOST · ₹32 lakh · Co-PI</p>
+      </div>
+      <div class="card">
+        <h4>Non-enzymatic strip sensor for phenolic contaminants in water</h4>
+        <p>DST · ₹34 lakh · Co-PI</p>
+      </div>
+      <div class="card">
+        <h4>Industry consultancy</h4>
+        <p>CEAT Tyres, Halol · 2022 · Completed</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="students">
+  <div class="wrap">
+    <h2><span class="k">Supervision</span>Doctoral research</h2>
+    <table>
+      <thead><tr><th>Scholar</th><th>Thesis</th><th>Status</th></tr></thead>
+      <tbody>
+        <tr><td>Vivek Kaundal</td><td>Human movement tracking in disaster-prone areas using ad hoc sensor networks</td><td><span class="badge">Awarded</span></td></tr>
+        <tr><td>Lipi K. Chhaya</td><td>Secured wireless communication infrastructure for smart microgrids</td><td><span class="badge">Awarded</span></td></tr>
+        <tr><td>Parita Oza</td><td>Machine learning in medical imaging</td><td><span class="badge">Awarded</span></td></tr>
+        <tr><td>Chaitali Mehta</td><td>Mathematical modelling of electric vehicle batteries</td><td><span class="badge">Awarded</span></td></tr>
+        <tr><td>Joy Acharya</td><td>IoT security systems using a shared-resource approach</td><td><span class="badge pub">Ongoing</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section id="teaching">
+  <div class="wrap">
+    <h2><span class="k">Teaching &amp; service</span>In the classroom and beyond</h2>
+    <div class="grid2">
+      <div class="card">
+        <h4>Courses taught</h4>
+        <ul>
+          <li>Computer Vision (UG &amp; PG)</li>
+          <li>Image Processing &amp; Machine Vision</li>
+          <li>Pattern Recognition &amp; Machine Learning</li>
+          <li>Advanced Digital Signal Processing</li>
+          <li>Wireless Sensor Networks · Introduction to IoT for Industries</li>
+          <li>Communication Systems · Basic Electronics · Nuclear Power Engineering</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h4>Professional memberships</h4>
+        <ul>
+          <li>IEEE — Senior Member</li>
+          <li>ACM — Senior Member</li>
+          <li>IAPR / IUPRAI — Life Member</li>
+          <li>IAENG — Member</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h4>Awards &amp; fellowships</h4>
+        <ul>
+          <li>Annual Research Award, UPES (2017)</li>
+          <li>Young Faculty Award, Venus International Foundation (2016)</li>
+          <li>DST-ITS Fellowship, Govt. of India (2012)</li>
+          <li>DGFS-Ph.D. Fellowship, DAE (2010)</li>
+          <li>GATE Scholarship, MHRD (2006)</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h4>Workshops &amp; conferences</h4>
+        <ul>
+          <li>Trainer for hands-on programmes on Raspberry Pi, OpenCV, SCILAB and embedded machine vision</li>
+          <li>Technical programme committee member &amp; reviewer — NGCT and ICICCD conference series</li>
+          <li>Session chair — NGCT-2016, ICICCD 2016</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <h2><span class="k">Contact</span>Get in touch</h2>
+    <p class="lead">Department of Information &amp; Communication Technology<br>Pandit Deendayal Energy University<br>Gandhinagar, Gujarat, India</p>
+    <div class="btns">
+      <!-- Add your email by un-commenting and editing the line below:
+      <a class="btn primary" href="mailto:you@example.com">Email me</a> -->
+      <a class="btn" href="https://scholar.google.com/citations?user=g_vWpL8AAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a>
+      <a class="btn" href="https://github.com/learn4creation" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>© <span id="y"></span> Paawan Sharma · Hosted on GitHub Pages</footer>
+
+<script>
+document.getElementById('y').textContent = new Date().getFullYear();
+(function(){
+  var q = document.getElementById('q'), count = document.getElementById('count');
+  var items = Array.prototype.slice.call(document.querySelectorAll('#publications ol.pubs li'));
+  function run(){
+    var t = q.value.trim().toLowerCase(), n = 0;
+    items.forEach(function(li){
+      var hit = !t || li.textContent.toLowerCase().indexOf(t) !== -1;
+      li.classList.toggle('hidden', !hit); if (hit) n++;
+    });
+    count.textContent = t ? n + ' of ' + items.length + ' shown' : items.length + ' publications';
+  }
+  q.addEventListener('input', run); run();
+})();
+</script>
+</body>
+</html>
